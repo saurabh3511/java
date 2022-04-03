@@ -1,4 +1,4 @@
-package java_Assignment.Assignment1;
+package java_Assignment.Assignment2;
 
 import java.util.HashMap;
 import java.util.Scanner;
