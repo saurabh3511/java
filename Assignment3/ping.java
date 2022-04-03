@@ -1,4 +1,4 @@
-package java_Assignment.Assignment1;
+package java_Assignment.Assignment3;
 
 import java.net.InetAddress;
 import java.util.*;
