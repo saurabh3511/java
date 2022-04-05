@@ -3,8 +3,8 @@ package java_Assignment.Assignment5;
 public class DefaultInitialization {
 
     public static void main(String[] args) {
-        Saurabh s=new Saurabh();
-        s.print();
+        Saurabh S=new Saurabh();
+        S.print();
         //p.printLocal();
         Singleton s=new Singleton();
         s.getEmail();
