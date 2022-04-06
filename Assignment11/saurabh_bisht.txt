@@ -1,0 +1,62 @@
+package code;
+import java.io.*;
+import java.util.*;
+public class code1 {
+
+    public static void main(String[] args) {
+        /* Enter your code here. Read input from STDIN. Print output to STDOUT. Your class should be named Solution. */
+        Scanner sc = new Scanner(System.in);
+        int time = sc.nextInt();
+        int intial_stop = sc.nextInt();
+        int final_stop = sc.nextInt();
+        String day = sc.next();
+        
+      discount ans = new discount();
+      int k = ans.payment(intial_stop, final_stop, day, time);
+      System.out.println(k/100 + "dollar" + k%100 +"cent");
+    }
+}
+
+ class card{
+	// check if the person is traveeling in day or night
+	int dayNight(int time) {
+		if(time>=6 && time<=23) {
+			return 80; 
+		}else return 60;
+	}
+	// number of stop travelled
+	int stoptravel(int intial_stop, int final_stop) {
+		return Math.abs(final_stop-intial_stop);
+	}
+	
+// is it a sunday or saturday	
+	boolean satsun(String day) {
+		if(day.equals("sunday") || day.equals("saturday")) {
+		return true;
+		}else return false;
+	}
+}
+
+class discount extends card{
+	
+	//calculating the ans with all discount 
+	int payment(int initial_stop,int final_stop,String day,int time ) {
+		
+		int charge = dayNight(time);
+		int stops = stoptravel(initial_stop,final_stop);
+		int ans=0;
+		if(stops>5) {
+			int fivestop = charge*5;
+			ans = ((charge*2)/10) * (stops-5) ;
+			ans+=fivestop;
+		}
+		
+		if(satsun(day)==true) {
+			ans = ans - (ans/10);
+			
+		}
+		
+		return ans;
+		
+	}
+}
